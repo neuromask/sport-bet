@@ -337,9 +337,18 @@ p {
         background: #EBEEF2; }
       .steps-box-carousel .steps-box-slide .row .team-img.team-2-img {
         background: #fff; }
+      .steps-box-carousel .steps-box-slide .row .team-img img {
+        max-width: 24px;
+        max-height: 24px;
+        width: 100%; }
     .steps-box-carousel .steps-box-slide .row .team-name {
       font-family: "Roboto Medium", Arial, sans-serif;
-      font-weight: 500; }
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      max-width: 85px; }
     .steps-box-carousel .steps-box-slide .row .rate {
       background: #fff;
       border: 1px solid #C2C8CE;
@@ -366,7 +375,10 @@ p {
       margin-bottom: 8px;
       text-align: center; }
       .steps-box-carousel .steps-box-slide .row .info-img img {
-        margin: 0 auto; }
+        margin: 0 auto;
+        max-width: 12px;
+        max-height: 12px;
+        width: 100%; }
     .steps-box-carousel .steps-box-slide .row .info-type {
       margin-bottom: 4px;
       font-family: "Roboto Medium", Arial, sans-serif;

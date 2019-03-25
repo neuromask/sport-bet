@@ -30,101 +30,25 @@
                 </div>
             </div>
         </section>
-        {% if pageData.steps %}
-            <section class="steps-section">
-                {% if pageData.steps.items %}
-                    <div class="container">
-                        <div class="row">
-                            {% for item in pageData.steps.items %}
-                                <div class="steps-header">
-                                    <div class="steps-headline float-left">
-                                        <h4>{{ item.headline }}</h4>
-                                    </div>
-                                    <div class="steps-arrows float-right">
-                                        <i class="material-icons md-18 prev">chevron_left</i>
-                                        <i class="material-icons md-18 next">chevron_right</i>
-                                    </div>
-                                </div>
-                                <div class="steps-item">
-                                    {% if item.carousel %}
-                                        <div class="steps-box-carousel">
-                                            {% for slide in item.carousel %}
-                                                <div class="steps-box-slide">
-                                                    <div class="row">
-                                                        <div class="column">
-                                                            {% if slide.team1 %}
-                                                                <div class="team-img team-1-img">
-                                                                    <img src="{{ slide.team1.image }}" title="{{ slide.team1.name }}">
-                                                                </div>
-                                                            {% endif %}
-                                                            {% if slide.team1.name %}
-                                                                <h6 class="team-name center">{{ slide.team1.name}}</h6>
-                                                            {% endif %}
-                                                        </div>
-                                                        <div class="column">
-                                                            {% if slide.info %}
-                                                                <div class="info-img center">
-                                                                    <img src="{{ slide.info.image }}" title="{{ slide.info.type }}">
-                                                                </div>
-                                                            {% endif %}
-                                                            {% if slide.info.type %}
-                                                                <h6 class="info-type center">{{ slide.info.type}}</h6>
-                                                            {% endif %}
-                                                            {% if slide.info.date %}
-                                                                <h6 class="info-date center">{{ slide.info.date}}</h6>
-                                                            {% endif %}
-                                                            {% if slide.info.time %}
-                                                                <h6 class="info-time center">{{ slide.info.time}}</h6>
-                                                            {% endif %}
-                                                        </div>
-                                                        <div class="column">
-                                                            {% if slide.team2 %}
-                                                                <div class="team-img team-2-img">
-                                                                    <img src="{{ slide.team2.image }}" title="{{ slide.team2.name }}">
-                                                                </div>
-                                                            {% endif %}
-                                                            {% if slide.team2.name %}
-                                                                <h6 class="team-name center">{{ slide.team2.name}}</h6>
-                                                            {% endif %}
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        {% if slide.rates %}
-                                                            <div class="column">
-                                                                <div class="rate center">
-                                                                    <span class="type">1</span>
-                                                                    <span class="num">{{ slide.rates.team1 }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="column">
-                                                                <div class="rate center">
-                                                                    <span class="type">X</span>
-                                                                    <span class="num">{{ slide.rates.draw }}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="column">
-                                                                <div class="rate center">
-                                                                    <span class="type">2</span>
-                                                                    <span class="num">{{ slide.rates.team2 }}</span>
-                                                                </div>
-                                                            </div>
-                                                        {% endif %}
-                                                    </div>
-                                                    {% if slide.url %}
-                                                        <a href="{{ slide.url }}"></a>
-                                                    {% endif %}
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            {% endfor %}
+        <section class="steps-section">
+            <div class="container">
+                <div class="row">
+                    <div class="steps-header">
+                        <div class="steps-headline float-left">
+                            <h4>Матчи дня</h4>
+                        </div>
+                        <div class="steps-arrows float-right">
+                            <i class="material-icons md-18 prev">chevron_left</i>
+                            <i class="material-icons md-18 next">chevron_right</i>
                         </div>
                     </div>
-                {% endif %}
-            </section>
-        {% endif %}
-        {% if pageData.steps %}
+                    <div class="steps-item">
+                        <div id="carousel" class="steps-box-carousel"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if pageData.news %}
             <section class="news-section">
                 {% if pageData.news.items %}
                     <div class="container">

@@ -105,11 +105,21 @@
         &.team-2-img {
           background: $color-white;
         }
+
+        & img {
+          max-width: 24px;
+          max-height: 24px;
+          width: 100%;
+        }
       }
 
       & .team-name {
         font-family: $roboto-medium;
         font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 85px;
       }
 
       & .rate {
@@ -142,6 +152,9 @@
         text-align: center;
         & img {
           margin: 0 auto;
+          max-width: 12px;
+          max-height: 12px;
+          width: 100%;
         }
       }
       & .info-type {

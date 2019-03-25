@@ -1,0 +1,160 @@
+{% set bodyClass = "payment" %}
+{% set pageTitle = "Sport news & bets" %}
+{% set pageData = data.page1 %}
+
+{% extends 'templates/layouts/default.njk' %}
+
+{% block content %}
+    <div class="wrapper">
+        <section class="input-section">
+            <div class="container">
+                <div class="row">
+                    <div class="column flex-basis-100">
+                        <form>
+                            <fieldset class="credit-card center">
+                                <div class="row">
+                                     <select class="dropdown">
+                                        <option value="0" data-imagesrc="Images/visa.svg">4890 42** **** 3421</option>
+                                        <option value="1" data-imagesrc="Images/mc.svg">2391 85** **** 1524</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="floating-ph">
+                                        <input placeholder=" " pattern="\D [^0-9]" type="text" class="card-owner floating-ph" id="card-owner">
+                                        <span>Имя на карте</span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if pageData.steps %}
+            <section class="steps-section">
+                {% if pageData.steps.items %}
+                    <div class="container">
+                        <div class="row">
+                            {% for item in pageData.steps.items %}
+                                <div class="steps-header">
+                                    <div class="steps-headline float-left">
+                                        <h4>{{ item.headline }}</h4>
+                                    </div>
+                                    <div class="steps-arrows float-right">
+                                        <i class="material-icons md-18 prev">chevron_left</i>
+                                        <i class="material-icons md-18 next">chevron_right</i>
+                                    </div>
+                                </div>
+                                <div class="steps-item">
+                                    {% if item.carousel %}
+                                        <div class="steps-box-carousel">
+                                            {% for slide in item.carousel %}
+                                                <div class="steps-box-slide">
+                                                    <div class="row">
+                                                        <div class="column">
+                                                            {% if slide.team1 %}
+                                                                <div class="team-img team-1-img">
+                                                                    <img src="{{ slide.team1.image }}" title="{{ slide.team1.name }}">
+                                                                </div>
+                                                            {% endif %}
+                                                            {% if slide.team1.name %}
+                                                                <h6 class="team-name center">{{ slide.team1.name}}</h6>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="column">
+                                                            {% if slide.info %}
+                                                                <div class="info-img center">
+                                                                    <img src="{{ slide.info.image }}" title="{{ slide.info.type }}">
+                                                                </div>
+                                                            {% endif %}
+                                                            {% if slide.info.type %}
+                                                                <h6 class="info-type center">{{ slide.info.type}}</h6>
+                                                            {% endif %}
+                                                            {% if slide.info.date %}
+                                                                <h6 class="info-date center">{{ slide.info.date}}</h6>
+                                                            {% endif %}
+                                                            {% if slide.info.time %}
+                                                                <h6 class="info-time center">{{ slide.info.time}}</h6>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="column">
+                                                            {% if slide.team2 %}
+                                                                <div class="team-img team-2-img">
+                                                                    <img src="{{ slide.team2.image }}" title="{{ slide.team2.name }}">
+                                                                </div>
+                                                            {% endif %}
+                                                            {% if slide.team2.name %}
+                                                                <h6 class="team-name center">{{ slide.team2.name}}</h6>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        {% if slide.rates %}
+                                                            <div class="column">
+                                                                <div class="rate center">
+                                                                    <span class="type">1</span>
+                                                                    <span class="num">{{ slide.rates.team1 }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="column">
+                                                                <div class="rate center">
+                                                                    <span class="type">X</span>
+                                                                    <span class="num">{{ slide.rates.draw }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="column">
+                                                                <div class="rate center">
+                                                                    <span class="type">2</span>
+                                                                    <span class="num">{{ slide.rates.team2 }}</span>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                    {% if slide.url %}
+                                                        <a href="{{ slide.url }}"></a>
+                                                    {% endif %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </section>
+        {% endif %}
+        {% if pageData.steps %}
+            <section class="news-section">
+                {% if pageData.news.items %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="news-box">
+                                {% for item in pageData.news.items %}
+                                    <div {% if loop.first %}class="headline"{% else %} class="subline"{% endif %}>
+                                        <div class="news-box__item">
+                                            {% if item.image %}
+                                                <div class="news-box__img">
+                                                    <div class="img-holder" style="background-image: url({{ item.image }})"></div>
+                                                </div>
+                                            {% endif %}
+                                            {% if item.title %}
+                                                <div class="news-box__text">
+                                                    <h5><span>{{ item.date }}</span></h5>
+                                                    <h4><span>{{ item.title }}</span></h4>
+                                                </div>
+                                            {% endif %}
+                                            {% if item.url %}
+                                                <a href="{{ item.url }}"></a>
+                                            {% endif %}
+                                        </div>
+                                     </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </section>
+        {% endif %}
+    </div>
+{% endblock %}

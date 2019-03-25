@@ -1,0 +1,270 @@
+.steps-section {
+  padding: 0;
+
+  & .slick-arrow {
+    cursor: pointer;
+    color: $color-typo-3;
+  }
+  .container {
+    padding:40px 45px 35px 45px;
+    @include breakpoint(480) {
+      padding:20px 20px 25px 20px;
+    }
+  }
+}
+
+.steps-header {
+  width: 100%;
+  margin: 0 0 10px 0;
+
+  & .steps-headline * {
+    font-family: $roboto-medium;
+    font-weight: 500;
+  }
+  & .steps-arrows {
+    & .prev {
+      margin-right:5px;
+    }
+    & .next {
+      margin-left:5px;
+    }
+  }
+}
+
+.steps-item {
+  width: 720px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  margin-left:-5px;
+
+  &:before {
+    content:'';
+    position: absolute;
+    top:0;left:0;
+    width:100%;
+    height:100%;
+    z-index: 99;
+    pointer-events: none;
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 86%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 86%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 86%,rgba(255,255,255,1) 100%);
+  }
+}
+
+.steps-box-carousel {
+  width:880px;
+  position: relative;
+
+  & .slick-list {
+    padding: 5px;
+  }
+
+  & .steps-box-slide {
+    border: 1px solid $color-grey-3;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(42, 47, 52, 0.05);
+    border-radius: 1px;
+    padding: 20px 10px;
+    width: 270px!important;
+    height:137px;
+    opacity: 1;
+    transition: none;
+    margin-right:20px;
+    overflow: hidden;
+    position: relative;
+
+    & > a {
+      position: absolute;
+      left:0; top:0;
+      width:100%;
+      height:100%;
+      cursor: pointer;
+    }
+
+    & .row {
+
+      & .column {
+        width: 33.3%;
+        overflow: hidden;
+        justify-content: center;
+        text-align: center;
+      }
+      & .team-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4px auto 5px auto;
+
+        &.team-1-img {
+          background: $color-grey-2;
+        }
+        &.team-2-img {
+          background: $color-white;
+        }
+      }
+
+      & .team-name {
+        font-family: $roboto-medium;
+        font-weight: 500;
+      }
+
+      & .rate {
+        background: $color-white;
+        border: 1px solid $color-grey-4;
+        box-sizing: border-box;
+        border-radius: 1px;
+        width:70px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 0.85rem;
+        padding: 0 8px;
+        display: inline-block;
+        margin-top: 10px;
+
+
+        & .type {
+          margin-right: 10px;
+          color: $color-typo-4;
+          font-family: $roboto-medium;
+          font-weight: 500;
+        }
+        & .num {
+          font-family: $roboto-medium;
+          font-weight: 500;
+        }
+      }
+      & .info-img {
+        margin-bottom: 8px;
+        text-align: center;
+        & img {
+          margin: 0 auto;
+        }
+      }
+      & .info-type {
+        margin-bottom: 4px;
+        font-family: $roboto-medium;
+        font-weight: 500;
+        font-size: 9px;
+        text-transform: uppercase;
+      }
+      & .info-date {
+        margin-bottom: 3px;
+        font-size: 11px;
+        color: $color-typo-3;
+      }
+      & .info-time {
+        font-family: $roboto-medium;
+        font-weight: 500;
+        font-size: 12px;
+        color: $color-typo-3;
+      }
+    }
+
+    background: $color-white;
+    background: -moz-linear-gradient(-75deg, $color-white 50%, $color-grey-5 50%);
+    background: -webkit-linear-gradient(-75deg, $color-white 50%, $color-grey-5 50%);
+    background: linear-gradient(105deg, $color-white 50%,$color-grey-5 50%);
+  }
+  & .steps-box-slide:hover {
+    box-shadow: 0px 0px 10px rgba(42, 47, 52, 0.15);
+  }
+}
+
+.steps-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  &__text {
+    width: 50%;
+    padding: 0 40px;
+    text-align: right;
+    margin: 0;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+.slick-list:focus {
+  outline: none; }
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table; }
+.slick-track:after {
+  clear: both; }
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+[dir="rtl"] .slick-slide {
+  float: right; }
+.slick-slide img {
+  display: block; }
+.slick-slide.slick-loading img {
+  display: none; }
+.slick-slide.dragging img {
+  pointer-events: none; }
+.slick-initialized .slick-slide {
+  display: block; }
+.slick-loading .slick-slide {
+  visibility: hidden; }
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
+.slick-slider .slick-list, .slick-track, .slick-slide, .slick-slide img { -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: none; -o-transform: translate3d(0, 0, 0); transform: none; }

@@ -1,0 +1,159 @@
+.input-section {
+  padding: 40px 20px;
+  background: $color-grey-2;
+  border-radius: 0;
+
+  & .container {
+    margin:0;
+  }
+}
+
+form {
+  & .row {
+    margin-bottom: 30px;
+  }
+  & .row:last-child {
+    margin-bottom: 0;
+  }
+
+  .dd-pointer {
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0!important;
+    left: auto;
+    border: 0!important;
+    margin-top: 0!important;
+
+    &:before {
+      font-family: $mi;
+      font-size: 1.5rem;
+      position: absolute;
+      top:8px;
+      right:10px;
+      color: $color-typo-2;
+    }
+    &.dd-pointer-down {
+      &:before {
+        content: '\e313';
+      }
+    }
+    &.dd-pointer-up {
+      &:before {
+        content: '\e316';
+      }
+    }
+  }
+
+  .dd-pointer-down {
+    border: solid 5px transparent;
+    border-top: solid 5px #000;
+  }
+  .dd-container:hover,
+  .dd-container:focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .dd-select {
+    border-radius: 1px;
+    border: 0;
+    background: $color-white!important;
+    position: relative;
+    cursor: pointer;
+    height: 40px;
+    line-height: 20px;
+  }
+  .dd-options {
+    border: 0;
+    height: 40px;
+    border-top:1px solid $color-grey-2;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .dd-option:hover {
+    background: $color-white;
+    color: $color-typo-1;
+  }
+  .dd-option {
+    border:0;
+    line-height: 20px;
+    padding: 10px 20px;
+    text-align: left;
+    color: $color-typo-1;
+  }
+  .dd-selected {
+    padding: 10px 20px;
+    text-align: left;
+    line-height: 20px;
+  }
+  .dd-option-image,
+  .dd-selected-image {
+    vertical-align: middle;
+    float: left;
+    margin-right: 12px;
+    max-width: 40px;
+    max-height: 18px;
+  }
+  .dd-option-text,
+  .dd-selected-text {
+    line-height: 1!important;
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+
+  .dd-option-selected {
+    display: none;
+  }
+
+  & .credit-card {
+    max-width: 350px;
+  }
+  & select,
+  & input {
+    background-color: $color-white;
+    padding:10px 20px;
+    width: 100%;
+    border: 0;
+    border-radius: 1px;
+    box-sizing : border-box;
+    height: 40px;
+  }
+
+  .floating-ph {
+    position:relative;
+    display:inline-block;
+    width: 100%;
+
+    & span {
+      padding:10px 20px;
+      pointer-events: none;
+      position:absolute;
+      left:0;
+      top:0;
+      line-height: 20px;
+      transition: 0.4s;
+      transition-timing-function: ease;
+      transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+      color: $color-typo-2;
+    }
+    & input:hover,
+    & input:focus {
+      border: 2px solid $color-grey-4;
+      box-sizing: border-box;
+      border-radius: 1px;
+      cursor: pointer;
+    }
+    & input:focus + span, & input:not(:placeholder-shown) + span {
+      transform: scale(0.75) translateY(-100%) translateX(-40px);
+    }
+
+    /* For IE Browsers*/
+    & input:focus + span, & input:not(:-ms-input-placeholder) + span {
+      transform: scale(0.75) translateY(-100%) translateX(-40px);
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,136 @@
+.news-section {
+  padding: 0 0 40px 0;
+
+  & .container {
+    margin-right: 10px;
+  }
+}
+
+.news-box {
+  width:100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 270px;
+
+  & .headline {
+    width: 68.5%;
+    height: 100%;
+  }
+  & .subline {
+    width: calc(31.5% - 10px);
+    height: calc(50% - 5px);
+    margin-bottom:10px;
+    margin-left:10px;
+  }
+  & .subline:last-child {
+    margin-bottom:0;
+  }
+  &__item {
+    position: relative;
+    height: 100%;
+    & > a {
+      position: absolute;
+      left:0; top:0;
+      width:100%;
+      height:100%;
+      cursor: pointer;
+    }
+  }
+  &__item:hover .img-holder ,
+  &__item:focus .img-holder {
+    transform: scale(1.1);
+    transition: transform .4s;
+  }
+  &__text {
+    position: absolute;
+    left:0;
+    bottom:0;
+    padding: 20px;
+
+    & h5 {
+      margin-bottom:0.2em;
+    }
+    & h4 {
+      font-weight: bold;
+    }
+  }
+  .subline &__text {
+    padding: 0 10px 10px 10px;
+  }
+  .subline &__text span {
+    font-size: 0.8em;
+  }
+  &__text * {
+    color: $color-white;
+  }
+  &__img {
+    height: 100%;
+    overflow: hidden;
+    .img-holder {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: transform .4s;
+
+      &:before {
+        content:'';
+        position: absolute;
+        left:0; top:0;
+        width:100%;
+        height:100%;
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+      }
+    }
+
+  }
+
+  @include breakpoint(480) {
+    flex-direction: row;
+    height: auto;
+
+    & .headline {
+      width: 100%;
+      height: 188px;
+    }
+    & .subline {
+      width: 100%;
+      height: auto;
+      padding:20px;
+      display: flex;
+      flex-direction: row;
+      border-bottom:1px solid $color-grey-2;
+      margin:0;
+    }
+    .subline &__item {
+       display: flex;
+       flex-direction: row;
+       flex-wrap: nowrap;
+    }
+    &__text {
+      padding: 10px;
+    }
+    .subline &__text {
+      width: 50%;
+      position: relative;
+    }
+    .subline &__text * {
+      color: $color-typo-1;
+    }
+    .subline &__img {
+      width:148px;
+      height:80px;
+      .img-holder {
+        &:before {
+          content:none;
+          background: none;
+        }
+      }
+    }
+
+  }
+}
